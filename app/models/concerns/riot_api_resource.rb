@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module ApiResource
+module RiotApiResource
   extend ActiveSupport::Concern
 
   class_methods do
