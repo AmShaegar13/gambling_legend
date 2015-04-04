@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   end
   
   def self.guest
-    new(name: 'Guest', guest: true)
+    new(name: 'Guest', guest: true) do |u|
+      u.readonly!
+    end
   end
 end

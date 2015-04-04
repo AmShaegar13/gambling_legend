@@ -3,10 +3,7 @@ module ApplicationHelper
     @current_user ||= if session[:user_id]
       User.find session[:user_id]
     else
-      u = User.guest
-      u.readonly!
-      
-      u
+      User.guest
     end
   end
 
