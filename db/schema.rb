@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150404110539) do
 
   create_table "users", force: :cascade do |t|
+    t.string   "login"
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150404110539) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["login"], name: "index_users_on_login", unique: true
   add_index "users", ["name"], name: "index_users_on_name", unique: true
 
 end
