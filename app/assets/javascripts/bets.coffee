@@ -26,3 +26,26 @@ $ ->
   amounts = $('.bet-amount')
   amounts.on 'change mousemove keypress', ->
     $(this).siblings('.preview-amount').text($(this).val())
+  
+  alert = $('#alert')
+  $('.new_bet').on('ajax:success', (e, data, status, xhr) ->
+    if data.status == 'success'
+      create_alert 'success', data.message
+    else
+      create_alert 'warning', data.message
+  ).on 'ajax:error', (e, xhr, status, error) ->
+    create_alert 'danger', '<strong>An unexpected error occurred.</strong> ' + error
+  
+  create_alert = (type, html) ->
+    alert.append(
+      $('<div>')
+        .addClass('alert alert-' + type + ' alert-dismissable')
+        .prop('role', 'alert')
+        .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>')
+        .append(html)
+    )
+
+    alert_timer = $.timer ->
+      alert.find(':first-child').remove()
+
+    alert_timer.once 3000
