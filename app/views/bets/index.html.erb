@@ -11,9 +11,9 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row" style="height: 250px">
     <% @bet_types.each do |type| %>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-md-4 col-sm-6 col-xs-12 bet">
         <h2><%= type.label %></h2>
         <%= form_for @bet, remote: true, namespace: type.label, html: { autocomplete: 'off' } do |f| %>
           <% type.choices.each do |choice| %>
