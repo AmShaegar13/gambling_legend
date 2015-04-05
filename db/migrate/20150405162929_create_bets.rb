@@ -5,6 +5,7 @@ class CreateBets < ActiveRecord::Migration
       t.integer :choice_id, null: false
       t.integer :amount, null: false
       t.integer :match
+      t.boolean :won
 
       t.timestamps null: false
     end
