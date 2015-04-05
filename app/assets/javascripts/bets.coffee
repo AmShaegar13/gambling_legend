@@ -23,6 +23,6 @@ $ ->
     time: 1000,
     autostart : true
 
-  amounts = $('.amount')
-  amounts.on 'change mousemove keypress', -> 
+  amounts = $('.bet-amount')
+  amounts.on 'change mousemove keypress', ->
     $(this).siblings('.preview-amount').text($(this).val())

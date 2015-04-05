@@ -12,21 +12,21 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @bets.each do |bet| %>
+    <% @bet_types.each do |type| %>
       <div class="col-md-4 col-sm-6 col-xs-12">
-        <h2><%= bet.label %></h2>
-        <%= form_for bet, url: bets_path, remote: true, html: { autocomplete: 'off' } do %>
-          <% bet.choices.each do |choice| %>
+        <h2><%= type.label %></h2>
+        <%= form_for @bet, remote: true, namespace: type.label, html: { autocomplete: 'off' } do |f| %>
+          <% type.choices.each do |choice| %>
             <div class="radio">
               <%= label_tag do %>
-                <%= radio_button_tag :choice, choice.label %>
+                <%= f.radio_button :choice, choice.label %>
                 <%= choice.label %>
               <% end %>
             </div>
           <% end %>
           <div class="input-group">
             <span class="input-group-addon preview-amount">0</span>
-            <%= range_field_tag :amount, 0, class: 'form-control amount', in: 0..current_user.balance, step: 10 %>
+            <%= f.range_field :amount, class: 'form-control bet-amount', in: 0..current_user.balance, step: 10 %>
             <span class="input-group-btn">
               <button type="submit" class="btn btn-success">Bet</button>
             </span>
