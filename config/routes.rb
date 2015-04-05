@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   post :sign_in, to: 'sessions#create', as: :sign_in
   get :sign_out, to: 'sessions#destroy', as: :sign_out
   
-  resources :users, path_names: { new: 'sign_up', edit: 'account' }
+  resources :users, path_names: { new: 'sign_up', edit: 'account' }, except: :destroy
+  
+  get :play, to: 'play#index'
 end

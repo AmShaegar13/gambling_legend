@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create! name: 'AmShaegar', email: 'login@amshaegar.de', password: 'asdasd', last_refill: Time.now
+
+BetType.create! label: 'TEAM_WIN'
+BetChoice.create! type: BetType.first, label: 'TEAM_BLUE'
+BetChoice.create! type: BetType.first, label: 'TEAM_RED'

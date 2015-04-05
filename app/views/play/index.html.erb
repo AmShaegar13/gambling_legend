@@ -1,13 +1,12 @@
 <div class="jumbotron">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Play now</h1>
-        <p>
-          Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.
-        </p>
-        <p><%= link_to 'Start playing &raquo;'.html_safe, play_path, class: 'btn btn-primary btn-lg', role: 'button' %></p>
-      </div>
+    <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+      <div class="progress">
+        <div id="time-left" class="progress-bar progress-bar-striped active"
+            role="progressbar" aria-valuenow="10:00" aria-valuemin="10:00" aria-valuemax="00:00"
+            data-seconds-left="<%= @seconds %>">
+        </div>
+        </div>
     </div>
   </div>
 </div>

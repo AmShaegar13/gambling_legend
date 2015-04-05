@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404110539) do
+ActiveRecord::Schema.define(version: 20150404183312) do
+
+  create_table "bet_choices", force: :cascade do |t|
+    t.string   "label",                   null: false
+    t.integer  "amount",     default: 10
+    t.integer  "type_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "bet_types", force: :cascade do |t|
+    t.string   "label",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "bet_types", ["label"], name: "index_bet_types_on_label", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
