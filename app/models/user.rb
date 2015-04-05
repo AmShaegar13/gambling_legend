@@ -9,8 +9,12 @@ class User < ActiveRecord::Base
     self.login = name.downcase
   end
   
-  def self.guest
-    new(name: 'Guest', guest: true) do |u|
+  def self.guest(session)
+    new(
+      name: 'Guest',
+      guest: true,
+      balance: session[:balance] || 1000
+    ) do |u|
       u.readonly!
     end
   end

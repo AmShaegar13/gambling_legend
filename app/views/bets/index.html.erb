@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+      <div class="progress">
+        <div id="time-left" class="progress-bar progress-bar-striped active"
+            role="progressbar" aria-valuenow="10:00" aria-valuemin="10:00" aria-valuemax="00:00"
+            data-seconds-left="<%= @seconds %>">
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @bets.each do |bet| %>
+      <div class="col-md-4">
+        <h2><%= bet.label %></h2>
+        <%= form_for bet, url: bets_path, remote: true do %>
+          <% bet.choices.each do |choice| %>
+            <div class="radio">
+              <%= label_tag do %>
+                <%= radio_button_tag :choice, choice.label %>
+                <%= choice.label %>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="input-group">
+            <span class="input-group-addon preview-amount">0</span>
+            <%= range_field_tag :amount, 0, class: 'form-control amount', in: 0..current_user.balance, step: 10 %>
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-success">Bet</button>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
