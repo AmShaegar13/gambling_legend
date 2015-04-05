@@ -13,9 +13,9 @@
 <div class="container">
   <div class="row">
     <% @bets.each do |bet| %>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6 col-xs-12">
         <h2><%= bet.label %></h2>
-        <%= form_for bet, url: bets_path, remote: true do %>
+        <%= form_for bet, url: bets_path, remote: true, html: { autocomplete: 'off' } do %>
           <% bet.choices.each do |choice| %>
             <div class="radio">
               <%= label_tag do %>
