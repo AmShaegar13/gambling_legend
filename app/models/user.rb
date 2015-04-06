@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   attr_accessor :guest
   alias_method :guest?, :guest
 
+  has_many :bets
+
   has_secure_password
   validates_presence_of :name, :email, :last_refill
 

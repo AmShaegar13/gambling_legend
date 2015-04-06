@@ -4,6 +4,8 @@ class Bet < ActiveRecord::Base
   belongs_to :choice, class_name: 'BetChoice', foreign_key: 'choice_id'
   belongs_to :match
 
+  scope :current, -> { where(match: nil) }
+
   validates_presence_of :user, :type, :choice, :amount
   validates_associated :user
   validates_uniqueness_of :type, scope: [:user, :match]

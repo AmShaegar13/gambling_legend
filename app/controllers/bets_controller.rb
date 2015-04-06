@@ -1,9 +1,12 @@
 class BetsController < ApplicationController
   def index
-    @bet = Bet.new amount: 136
+    @user = User.current_user
+    @bets = Hash.new(Bet.new(amount: 0))
+    @user.bets.current.includes(:type).each do |bet|
+      @bets[bet.type.label] = Bet.new(amount: bet.amount)
+    end
     @bet_types = BetType.includes(:choices)
     @seconds = 600 - Time.now.to_i % 600
-    @user = User.current_user
   end
 
   def create
