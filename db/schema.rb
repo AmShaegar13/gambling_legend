@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150405162929) do
     t.integer  "user_id",    null: false
     t.integer  "choice_id",  null: false
     t.integer  "amount",     null: false
-    t.integer  "match"
+    t.integer  "match_id"
     t.boolean  "won"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

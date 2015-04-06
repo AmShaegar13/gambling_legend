@@ -20,7 +20,7 @@
         <a class="navbar-brand" href="/">Gambling Legend</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <% if current_user.guest? %>
+        <% if @user.guest? %>
           <%= form_tag sign_in_path, method: :post, class: 'navbar-form navbar-right' do %>
             <div class="form-group">
               <%= label_tag :name_or_email, 'Name or Email', class: %w(control-label sr-only) %>
@@ -36,14 +36,14 @@
           <% end %>
         <% else %>
           <div class="navbar-form navbar-right">
-            <%= link_to current_user.name, current_user, class: 'btn btn-link', role: 'button' %>
+            <%= link_to @user.name, @user, class: 'btn btn-link', role: 'button' %>
             <%= link_to 'Sign Out', sign_out_path, class: 'btn btn-danger', role: 'button' %>
           </div>
         <% end %>
       </div><!--/.navbar-collapse -->
     </div>
   </nav>
-  
+
   <%= yield %>
 
   <div class="container">
@@ -53,6 +53,6 @@
       <p>&copy; AmShaegar 2015 <small>Gambling Legend isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends &copy; Riot Games, Inc.</small></p>
     </footer>
   </div>
-    
+
 </body>
 </html>

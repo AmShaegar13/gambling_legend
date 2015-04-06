@@ -30,7 +30,7 @@
           <% end %>
           <div class="input-group">
             <span class="input-group-addon preview-amount">0</span>
-            <%= f.range_field :amount, class: 'form-control bet-amount', in: 0..current_user.balance, step: 10 %>
+            <%= f.range_field :amount, class: 'form-control bet-amount', in: 0..@user.balance, step: 10 %>
             <span class="input-group-btn">
               <button type="submit" class="btn btn-success">Bet</button>
               <button type="submit" class="btn btn-danger hidden">Delete</button>

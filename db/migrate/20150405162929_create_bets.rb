@@ -4,7 +4,7 @@ class CreateBets < ActiveRecord::Migration
       t.integer :user_id, null: false
       t.integer :choice_id, null: false
       t.integer :amount, null: false
-      t.integer :match
+      t.integer :match_id
       t.boolean :won
 
       t.timestamps null: false
