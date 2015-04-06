@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   resources :users, path_names: { new: 'sign_up', edit: 'account' }, except: :destroy
   
-  resources :bets, except: [:index, :new, :edit]
+  resources :bets, only: [:create]
   get :play, to: 'bets#index'
+  delete :bets, to: 'bets#destroy'
 end

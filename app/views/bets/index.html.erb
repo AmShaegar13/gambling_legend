@@ -17,6 +17,9 @@
       <div class="col-md-4 col-sm-6 col-xs-12 bet">
         <h2><%= type.label %></h2>
         <%= form_for @bet, remote: true, namespace: type.label, html: { autocomplete: 'off' } do |f| %>
+          <%= f.fields_for type do |ft| %>
+            <%= ft.hidden_field :label  %>
+          <% end %>
           <% type.choices.each do |choice| %>
             <div class="radio">
               <%= label_tag do %>
@@ -30,6 +33,7 @@
             <%= f.range_field :amount, class: 'form-control bet-amount', in: 0..current_user.balance, step: 10 %>
             <span class="input-group-btn">
               <button type="submit" class="btn btn-success">Bet</button>
+              <button type="submit" class="btn btn-danger hidden">Delete</button>
             </span>
           </div>
         <% end %>

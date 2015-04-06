@@ -30,7 +30,7 @@ $ ->
   alert = $('#alert')
   $('.new_bet').on('ajax:success', (e, data, status, xhr) ->
     if data.status == 'success'
-      create_alert 'success', data.message
+      handle_bet data
     else
       create_alert 'warning', data.message
   ).on 'ajax:error', (e, xhr, status, error) ->
@@ -49,3 +49,16 @@ $ ->
       alert.find(':first-child').remove()
 
     alert_timer.once 3000
+
+  handle_bet = (data) ->
+    form = $('#' + data.type + '_new_bet')
+    if data.action == 'disable'
+      form.prop 'method', 'delete'
+      form.find('input[type=range]').prop 'disabled', true
+      form.find('.btn-success').addClass('hidden')
+      form.find('.btn-danger').removeClass('hidden')
+    else
+      form.prop 'method', 'post'
+      form.find('input[type=range]').prop 'disabled', false
+      form.find('.btn-success').removeClass('hidden')
+      form.find('.btn-danger').addClass('hidden')

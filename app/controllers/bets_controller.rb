@@ -6,6 +6,16 @@ class BetsController < ApplicationController
   end
   
   def create
-    render json: { status: 'success', msg: 'message' }
+    bet = params.require :bet
+    type = bet.require(:bet_type).require(:label)
+    
+    render json: { status: 'success', action: 'disable', type: type }
+  end
+  
+  def destroy
+    bet = params.require :bet
+    type = bet.require(:bet_type).require(:label)
+    
+    render json: { status: 'success', action: 'enable', type: type }
   end
 end
