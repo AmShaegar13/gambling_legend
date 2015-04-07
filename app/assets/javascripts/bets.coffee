@@ -54,13 +54,15 @@ $ ->
   handle_bet = (data) ->
     form = $('#' + data.type + '_new_bet')
     button = form.find('button[type=submit]')
+    form.find('input.bet-amount').toggleClass 'hidden'
+    $('input.bet-amount').prop 'max', data.balance
     if data.action == 'disable'
       form.prop 'method', 'delete'
-      form.find('input[type=range]').prop 'disabled', true
-      button.removeClass('btn-success')
-      button.addClass('btn-danger')
+      button.removeClass 'btn-success'
+      button.addClass 'btn-danger'
+      button.text 'Cancel'
     else
       form.prop 'method', 'post'
-      form.find('input[type=range]').prop 'disabled', false
-      button.removeClass('btn-danger')
-      button.addClass('btn-success')
+      button.removeClass 'btn-danger'
+      button.addClass 'btn-success'
+      button.text 'Bet'

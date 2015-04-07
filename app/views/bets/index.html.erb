@@ -17,8 +17,8 @@
       <div class="col-md-4 col-sm-6 col-xs-12 bet">
         <h2><%= type.label %></h2>
         <% bet = @bets[type.label] %>
-        <% disable = bet.amount != 0 %>
-        <%= form_for bet, remote: true, namespace: type.label, method: disable ? 'delete' : 'post', html: { autocomplete: 'off' } do |f| %>
+        <% disabled = bet.amount != 0 %>
+        <%= form_for bet, remote: true, namespace: type.label, method: disabled ? 'delete' : 'post', html: { autocomplete: 'off' } do |f| %>
           <%= f.fields_for type do |ft| %>
             <%= ft.hidden_field :label  %>
           <% end %>
@@ -32,15 +32,20 @@
           <% end %>
           <div class="input-group">
             <span class="input-group-addon preview-amount"></span>
+            <% range_class = %w(form-control bet-amount) %>
+            <% range_class << 'hidden' if disabled %>
             <%= f.range_field(
               :amount,
-              class: 'form-control bet-amount',
+              class: range_class,
               in: 0..@user.balance,
-              step: 10,
-              disabled: disable
+              step: 10
             ) %>
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-<%= disable ? 'danger' : 'success' %>">Bet</button>
+              <% if disabled %>
+                <button type="submit" class="btn btn-danger">Cancel</button>
+              <% else %>
+                <button type="submit" class="btn btn-success">Bet</button>
+              <% end %>
             </span>
           </div>
         <% end %>
