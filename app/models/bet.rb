@@ -19,4 +19,9 @@ class Bet < ActiveRecord::Base
     user.balance -= amount
     user.save!
   end
+
+  after_destroy do
+    user.balance += amount
+    user.save!
+  end
 end

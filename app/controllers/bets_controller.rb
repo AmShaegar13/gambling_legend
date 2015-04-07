@@ -33,7 +33,18 @@ class BetsController < ApplicationController
     bet_params = params.require :bet
     type = BetType.find_by(label: bet_params.require(:bet_type).require(:label))
 
-    # TODO
+    bet = Bet.find_by(
+      user: User.current_user,
+      type: type,
+      match: nil
+    )
+
+    if bet.nil?
+      render json: { status: 'error', message: '<strong>Unexpected error.</strong> Could not find your bet' }
+      return
+    end
+
+    bet.destroy
 
     render json: { status: 'success', action: 'enable', type: type.label }
   end
