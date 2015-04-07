@@ -10,6 +10,7 @@ gem 'coffee-rails'
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 gem 'spring', group: :development
 
