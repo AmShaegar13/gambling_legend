@@ -26,7 +26,7 @@ $ ->
   amounts = $('.bet-amount')
   amounts.on 'change mousemove keypress', ->
     $(this).siblings('.preview-amount').text($(this).val())
-  amounts.trigger 'change'
+  amounts.find(':visible').trigger 'change'
 
   alert = $('#alert')
   $('.new_bet').on('ajax:success', (e, data, status, xhr) ->
@@ -53,16 +53,26 @@ $ ->
 
   handle_bet = (data) ->
     form = $('#' + data.type + '_new_bet')
+    method = form.find('input[name=_method]')
+    choices = form.find('input[type=radio]')
     button = form.find('button[type=submit]')
-    form.find('input.bet-amount').toggleClass 'hidden'
-    $('input.bet-amount').prop 'max', data.balance
+    amount = form.find('input.bet-amount')
+    amount.toggleClass 'hidden'
+    ranges = $('input.bet-amount:visible')
+    ranges.prop 'max', data.balance
+    amount.prop 'value', data.amount
+    ranges.trigger 'change'
     if data.action == 'disable'
       form.prop 'method', 'delete'
+      method.prop 'value', 'delete'
+      choices.prop 'disabled', true
       button.removeClass 'btn-success'
       button.addClass 'btn-danger'
       button.text 'Cancel'
     else
       form.prop 'method', 'post'
+      method.prop 'value', 'post'
+      choices.prop 'disabled', false
       button.removeClass 'btn-danger'
       button.addClass 'btn-success'
       button.text 'Bet'

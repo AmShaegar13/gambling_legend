@@ -26,7 +26,7 @@ class BetsController < ApplicationController
       return
     end
 
-    render json: { status: 'success', action: 'disable', type: type.label, balance: User.current_user.balance }
+    render json: { status: 'success', action: 'disable', type: type.label, balance: User.current_user.balance, amount: bet.amount }
   end
 
   def destroy
@@ -47,6 +47,6 @@ class BetsController < ApplicationController
     bet.destroy
     User.current_user.reload
 
-    render json: { status: 'success', action: 'enable', type: type.label, balance: User.current_user.balance }
+    render json: { status: 'success', action: 'enable', type: type.label, balance: User.current_user.balance, amount: bet.amount }
   end
 end
