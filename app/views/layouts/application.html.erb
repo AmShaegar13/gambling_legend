@@ -28,16 +28,27 @@
             </div>
             <div class="<%= password_class %>">
               <%= label_tag :password, 'Password', class: 'control-label sr-only' %>
-              <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password', 'aria-describedby' => 'inputError2Status' %>
+              <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password', 'aria-describedby' => 'login_failed_error' %>
               <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-              <span id="inputError2Status" class="sr-only">(error)</span>
+              <span id="login_failed_error" class="sr-only">(error)</span>
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Sign in</button>
+            <%= link_to new_user_path, class: 'btn btn-primary', role: 'button' do %>
+              <i class="glyphicon glyphicon-pencil"></i>Sign Up
+            <% end %>
           <% end %>
         <% else %>
           <div class="navbar-form navbar-right">
-            <%= link_to @user.name, @user, class: 'btn btn-link', role: 'button' %>
-            <%= link_to 'Sign Out', sign_out_path, class: 'btn btn-danger', role: 'button' %>
+            <%= link_to user_path, class: 'btn btn-link', role: 'button' do %>
+              <i class="glyphicon glyphicon-user"></i><%= @user.name %>
+            <% end %>
+            <%= link_to refill_user_path, class: 'btn btn-link', role: 'button', id: 'balance' do %>
+              <i class="glyphicon glyphicon-piggy-bank"></i><%= @user.balance %>
+            <% end %>
+            &nbsp;
+            <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
+              <i class="glyphicon glyphicon-off"></i>Sign Out
+            <% end %>
           </div>
         <% end %>
       </div><!--/.navbar-collapse -->

@@ -62,6 +62,7 @@ $ ->
     ranges.prop 'max', data.balance
     amount.prop 'value', data.amount
     ranges.trigger 'change'
+    $('#balance').text data.balance
     if data.action == 'disable'
       form.prop 'method', 'delete'
       method.prop 'value', 'delete'
