@@ -28,7 +28,8 @@
           <% type.choices.each do |choice| %>
             <div class="radio">
               <%= label_tag do %>
-                <%= f.radio_button :choice, choice.label %>
+                <% pp bet.choice %>
+                <%= f.radio_button :choice, choice.label, checked: choice == bet.choice, disabled: cancel %>
                 <%= choice.label %>
               <% end %>
             </div>

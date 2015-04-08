@@ -3,7 +3,7 @@ class BetsController < ApplicationController
     @user = User.current_user
     @bets = Hash.new(Bet.new(amount: 0))
     @user.bets.current.includes(:type).each do |bet|
-      @bets[bet.type.label] = Bet.new(amount: bet.amount)
+      @bets[bet.type.label] = Bet.new(amount: bet.amount, choice: bet.choice)
     end
     @bet_types = BetType.includes(:choices)
     @seconds = 600 - Time.now.to_i % 600
