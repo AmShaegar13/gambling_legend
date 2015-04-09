@@ -1,5 +1,8 @@
 $ ->
   progress_bar = $('#time-left')
+
+  return if progress_bar.size() == 0
+
   seconds_left = progress_bar.data('seconds-left')
 
   timer = $.timer ->
