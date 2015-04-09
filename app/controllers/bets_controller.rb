@@ -1,5 +1,13 @@
 class BetsController < ApplicationController
+  LOCK_FILE = 'tmp/bets.lock'
+
   def index
+    if File.exist?(LOCK_FILE)
+      @locked = File.open(LOCK_FILE).read
+      render 'locked'
+      return
+    end
+
     @user = User.current_user
     @bets = Hash.new(Bet.new(amount: 0))
     @user.bets.current.includes(:type).each do |bet|
@@ -7,6 +15,12 @@ class BetsController < ApplicationController
     end
     @bet_types = BetType.includes(:choices)
     @seconds = 600 - Time.now.to_i % 600
+  end
+
+  before_action only: [:create, :destroy] do
+    if File.exist?(LOCK_FILE)
+      render json: { status: 'error', message: '<strong>Calculating...</strong> Bets are locked while calculating results.' }
+    end
   end
 
   def create

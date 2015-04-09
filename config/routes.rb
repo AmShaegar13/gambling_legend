@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get :refill, to: 'user#refill'
   end
 
-  resources :bets, only: [:create]
-  get :play, to: 'bets#index'
+  resources :bets, only: :create
   delete :bets, to: 'bets#destroy'
+  get :play, to: 'bets#index'
+  get :locked, to: 'bets#locked'
 end

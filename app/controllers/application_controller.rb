@@ -12,6 +12,5 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    @user = User.current_user
   end
 end
