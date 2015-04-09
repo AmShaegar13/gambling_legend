@@ -3,7 +3,7 @@ class BetsController < ApplicationController
 
   def index
     if File.exist?(LOCK_FILE)
-      @locked = File.open(LOCK_FILE).read
+      @locked = File.open(LOCK_FILE).read.gsub(/\n/, "<br>").html_safe
       render 'locked'
       return
     end
