@@ -1,0 +1,2 @@
+class KillingSpreeBet < BetType
+end

@@ -13,7 +13,7 @@ class BetsController < ApplicationController
     @user.bets.current.includes(:type).each do |bet|
       @bets[bet.type.label] = Bet.new(amount: bet.amount, choice: bet.choice)
     end
-    @bet_types = BetType.includes(:choices)
+    @bet_types = BetType.select("*, '' AS type").includes(:choices)
     @seconds = 600 - Time.now.to_i % 600
   end
 

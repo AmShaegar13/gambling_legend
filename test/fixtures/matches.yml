@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  winner: 1
+  dragons: 1
+  barons: 1
+  killing_spree: 1
+  multi_kill: 1
+
+two:
+  winner: 1
+  dragons: 1
+  barons: 1
+  killing_spree: 1
+  multi_kill: 1

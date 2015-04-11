@@ -1,0 +1,2 @@
+class MultiKillBet < BetType
+end

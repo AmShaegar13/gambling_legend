@@ -1,0 +1,2 @@
+class WinnerBet < BetType
+end

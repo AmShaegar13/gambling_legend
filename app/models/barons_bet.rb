@@ -1,0 +1,2 @@
+class BaronsBet < BetType
+end

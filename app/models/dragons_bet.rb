@@ -1,0 +1,2 @@
+class DragonsBet < BetType
+end

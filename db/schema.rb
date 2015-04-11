@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405162929) do
+ActiveRecord::Schema.define(version: 20150411131754) do
 
   create_table "bet_choices", force: :cascade do |t|
     t.string   "label",                   null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150405162929) do
     t.string   "label",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "type"
   end
 
   add_index "bet_types", ["label"], name: "index_bet_types_on_label", unique: true
@@ -41,6 +42,16 @@ ActiveRecord::Schema.define(version: 20150405162929) do
   end
 
   add_index "bets", ["user_id", "type_id", "match_id"], name: "index_bets_on_user_id_and_type_id_and_match_id", unique: true
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "winner"
+    t.integer  "dragons"
+    t.integer  "barons"
+    t.integer  "killing_spree"
+    t.integer  "multi_kill"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "login"

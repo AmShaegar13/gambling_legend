@@ -24,4 +24,10 @@ class Bet < ActiveRecord::Base
     user.balance += amount
     user.save!
   end
+
+  def process!(match)
+    type.process! self, match
+    self.match = match
+    save!
+  end
 end
