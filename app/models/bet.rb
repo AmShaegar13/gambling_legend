@@ -30,4 +30,12 @@ class Bet < ActiveRecord::Base
     self.match = match
     save!
   end
+
+  def win!
+    puts 'win!'
+  end
+
+  def lose!
+    puts 'lose!'
+  end
 end
