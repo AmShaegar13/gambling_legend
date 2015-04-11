@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create! name: 'AmShaegar', email: 'login@amshaegar.de', password: 'asdasd', last_refill: Time.now, balance: 1000
+User.create! name: 'AmShaegar', email: 'login@email.com', password: 'asdasd', last_refill: Time.now, balance: 1000
 
 WinnerBet.create! label: 'TEAM_WIN' do |type|
   BetChoice.create! type: type, label: 'TEAM_BLUE'
