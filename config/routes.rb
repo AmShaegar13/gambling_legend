@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   get :sign_out, to: 'sessions#destroy', as: :sign_out
 
   resource :user, path_names: { new: 'sign_up', edit: 'account' }, except: :destroy do
-    get :refill, to: 'user#refill'
+    get :refill, action: :refill
   end
 
-  resources :bets, only: :create
-  delete :bets, to: 'bets#destroy'
+  resource :bets, only: [:create, :destroy]
   get :play, to: 'bets#index'
   get :locked, to: 'bets#locked'
 end
