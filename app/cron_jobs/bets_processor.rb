@@ -3,12 +3,10 @@ require 'riot_games/random_match'
 class BetsProcessor
   LOCK_FILE = 'tmp/bets.lock'
 
-  def initialize
+  def run!
     file_append_line '<strong>Betting is temporarily locked.</strong> You can neither place nor cancel bets while winnings are calculated.'
     file_append_line
-  end
 
-  def run!
     Bet.transaction do
       match = random_match
       bets = Bet.current
