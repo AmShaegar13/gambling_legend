@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412024717) do
+ActiveRecord::Schema.define(version: 20150411131754) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bet_choices", force: :cascade do |t|
-    t.string   "label",                   null: false
-    t.integer  "amount",     default: 10
-    t.integer  "type_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "label",      null: false
+    t.integer  "type_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "bet_types", force: :cascade do |t|
@@ -28,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150412024717) do
     t.string   "type"
   end
 
-  add_index "bet_types", ["label"], name: "index_bet_types_on_label", unique: true
+  add_index "bet_types", ["label"], name: "index_bet_types_on_label", unique: true, using: :btree
 
   create_table "bets", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -41,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150412024717) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "bets", ["user_id", "type_id", "match_id"], name: "index_bets_on_user_id_and_type_id_and_match_id", unique: true
+  add_index "bets", ["user_id", "type_id", "match_id"], name: "index_bets_on_user_id_and_type_id_and_match_id", unique: true, using: :btree
 
   create_table "matches", force: :cascade do |t|
     t.integer  "winner"
@@ -64,8 +66,8 @@ ActiveRecord::Schema.define(version: 20150412024717) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["login"], name: "index_users_on_login", unique: true
-  add_index "users", ["name"], name: "index_users_on_name", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
+  add_index "users", ["name"], name: "index_users_on_name", unique: true, using: :btree
 
 end
