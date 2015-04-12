@@ -1,5 +1,6 @@
 class BetsController < ApplicationController
   LOCK_FILE = 'tmp/bets.lock'
+  INTERVAL = 600
 
   def index
     if File.exist?(LOCK_FILE)
@@ -14,7 +15,7 @@ class BetsController < ApplicationController
       @bets[bet.type.label] = Bet.new(amount: bet.amount, choice: bet.choice)
     end
     @bet_types = BetType.select("*, '' AS type").includes(:choices)
-    @seconds = 600 - Time.now.to_i % 600
+    @seconds = INTERVAL - Time.now.to_i % INTERVAL
   end
 
   before_action only: [:create, :destroy] do

@@ -11,6 +11,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 gem 'spring', group: :development
 
@@ -23,8 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
+gem 'daemons'
 
 # heroku
 gem 'rails_12factor', group: :production

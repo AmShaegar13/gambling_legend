@@ -56,6 +56,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    daemons (1.2.2)
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -153,6 +154,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
   coffee-rails
+  daemons
   jquery-rails
   jquery-turbolinks
   pg
