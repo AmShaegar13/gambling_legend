@@ -8,6 +8,6 @@ Daemons.run_proc('bets.rb') do
 
   loop do
     sleep(INTERVAL - Time.now.to_i % INTERVAL)
-    processor.run!
+    processor.run! rescue nil
   end
 end
