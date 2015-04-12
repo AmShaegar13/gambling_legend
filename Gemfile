@@ -25,3 +25,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+
+# heroku
+gem 'rails_12factor', group: :production
