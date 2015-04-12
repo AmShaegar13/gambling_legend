@@ -4,7 +4,8 @@ class Bet < ActiveRecord::Base
   belongs_to :choice, class_name: 'BetChoice', foreign_key: 'choice_id'
   belongs_to :match
 
-  scope :current, -> { where(match: nil) }
+  scope :current, -> { where(won: nil) }
+  scope :completed, -> { where.not(won: nil) }
 
   validates_presence_of :user, :type, :choice, :amount
   validates_associated :user
@@ -32,10 +33,15 @@ class Bet < ActiveRecord::Base
   end
 
   def win!
-    puts 'win!'
+    self.won = true
+    save!
+
+    user.balance += choice.odds * amount
+    user.save!
   end
 
   def lose!
-    puts 'lose!'
+    self.won = false
+    save!
   end
 end

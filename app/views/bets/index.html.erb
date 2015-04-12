@@ -32,6 +32,7 @@
                 <%= f.radio_button :choice, choice.label, checked: choice == bet.choice, disabled: cancel %>
                 <%= choice.label %>
               <% end %>
+              <span style="float: right"><%= "%.2f" % [choice.odds] %></span>
             </div>
           <% end %>
           <div class="input-group">

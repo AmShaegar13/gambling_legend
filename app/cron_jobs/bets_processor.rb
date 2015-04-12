@@ -17,7 +17,6 @@ class BetsProcessor
         file_append('.')
         bet.process! match
       end
-      raise 'Interrupted!'
     end
 
     File.delete LOCK_FILE
