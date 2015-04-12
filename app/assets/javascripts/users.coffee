@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  alert = $('#alert')
+  $('#new_user').on('ajax:success', (e, data, status, xhr) ->
+    if data.status == 'success'
+      location.href = '/'
+    else
+      create_alert 'warning', data.message
+  ).on 'ajax:error', (e, xhr, status, error) ->
+    create_alert 'danger', '<strong>An unexpected error occurred.</strong> ' + error
+
+  create_alert = (type, html) ->
+    alert.html(
+      $('<div>')
+        .addClass('alert alert-' + type)
+        .prop('role', 'alert')
+        .html(html)
+    )

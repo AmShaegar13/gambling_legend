@@ -7,14 +7,17 @@ class User < ActiveRecord::Base
   has_many :bets
 
   has_secure_password
-  validates_presence_of :name, :email, :last_refill
+  validates_presence_of :login, :name, :email, :last_refill
+  validates_uniqueness_of :login, :name, :email
 
   validate do
     errors.add :balance, 'cannot be negative' if balance < 0
   end
 
-  before_create do
-    self.login = name.downcase
+  before_validation do
+    self.balance ||= 1000
+    self.last_refill ||= Time.now
+    self.login ||= name.downcase
   end
 
   def self.guest(session)
