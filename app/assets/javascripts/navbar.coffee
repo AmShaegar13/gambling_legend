@@ -1,8 +1,17 @@
 $ ->
+  refill = $('#refill')
   alert = $('#alert')
-  $('#new_user').on('ajax:success', (e, data, status, xhr) ->
+
+  refill.on('ajax:success', (e, data, status, xhr) ->
     if data.status == 'success'
-      Turbolinks.visit('/')
+      refill.addClass 'hidden'
+      $('#balance').text data.balance
+      ranges = $('input.bet-amount:visible')
+      ranges.prop 'max', data.balance
+      if data.balance < 10
+        ranges.prop 'step', data.balance
+      else
+        ranges.prop 'step', 10
     else
       create_alert 'warning', data.message
   ).on 'ajax:error', (e, xhr, status, error) ->

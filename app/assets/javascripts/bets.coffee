@@ -49,7 +49,7 @@ $ ->
         .addClass('alert alert-' + type + ' alert-dismissable')
         .prop('role', 'alert')
         .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>')
-        .html(html)
+        .append(html)
     )
 
     alert_timer = $.timer ->
@@ -65,6 +65,10 @@ $ ->
     amount.toggleClass 'hidden'
     ranges = $('input.bet-amount:visible')
     ranges.prop 'max', data.balance
+    if data.balance < 10
+      ranges.prop 'step', data.balance
+    else
+      ranges.prop 'step', 10
     amount.prop 'value', data.amount
     ranges.trigger 'change'
     $('#balance').text data.balance

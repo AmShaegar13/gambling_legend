@@ -42,10 +42,13 @@
             <%= link_to user_path, class: 'btn btn-link', role: 'button' do %>
               <i class="glyphicon glyphicon-user"></i><%= User.current_user.name %>
             <% end %>
-            <%= link_to refill_user_path, class: 'btn btn-link', role: 'button' do %>
+            <%= link_to history_bets_path, class: 'btn btn-link', role: 'button' do %>
               <i class="glyphicon glyphicon-piggy-bank"></i><span id="balance"><%= User.current_user.balance %></span>
             <% end %>
             &nbsp;
+            <%= link_to refill_user_path, class: refill_class, role: 'button', remote: true, id: :refill do %>
+              <%=t :REFILL %>
+            <% end %>
             <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
               <i class="glyphicon glyphicon-off"></i><%=t :SIGN_OUT %>
             <% end %>

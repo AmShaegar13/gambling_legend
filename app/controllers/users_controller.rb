@@ -14,4 +14,18 @@ class UsersController < ApplicationController
 
     render json: { status: 'success' }
   end
+
+  def refill
+    user = User.current_user
+
+    if user.balance != 0 || user.bets.current.size != 0
+      render json: { status: 'error', message: 'Not eligible for refill.' }
+      return
+    end
+
+    user.balance = 1000
+    user.save!
+
+    render json: { status: 'success', balance: user.balance }
+  end
 end
