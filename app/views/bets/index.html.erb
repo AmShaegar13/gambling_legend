@@ -15,7 +15,7 @@
   <div class="row" style="height: 280px">
     <% @bet_types.each do |type| %>
       <div class="col-md-4 col-sm-6 col-xs-12 bet">
-        <h2><%= type.label %></h2>
+        <h2><%=t type.label %></h2>
         <% bet = @bets[type.label] %>
         <% cancel = bet.amount != 0 %>
         <%= form_for bet, remote: true, namespace: type.label, method: cancel ? 'delete' : 'post', html: { autocomplete: 'off' } do |f| %>
@@ -28,9 +28,8 @@
           <% type.choices.each do |choice| %>
             <div class="radio">
               <%= label_tag do %>
-                <% pp bet.choice %>
                 <%= f.radio_button :choice, choice.label, checked: choice == bet.choice, disabled: cancel %>
-                <%= choice.label %>
+                <%=t choice.label %>
               <% end %>
               <span style="float: right"><%= "%.2f" % [choice.odds] %></span>
             </div>

@@ -32,9 +32,9 @@
               <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
               <span id="login_failed_error" class="sr-only">(error)</span>
             </div>
-            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Sign in</button>
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i><%=t :SIGN_IN %></button>
             <%= link_to new_user_path, class: 'btn btn-primary', role: 'button' do %>
-              <i class="glyphicon glyphicon-pencil"></i>Sign Up
+              <i class="glyphicon glyphicon-pencil"></i><%=t :SIGN_UP %>
             <% end %>
           <% end %>
         <% else %>
@@ -47,7 +47,7 @@
             <% end %>
             &nbsp;
             <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
-              <i class="glyphicon glyphicon-off"></i>Sign Out
+              <i class="glyphicon glyphicon-off"></i><%=t :SIGN_OUT %>
             <% end %>
           </div>
         <% end %>

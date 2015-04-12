@@ -1,23 +1,42 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  SIGN_UP: 'Sign Up'
+  SIGN_IN: 'Sign In'
+  SIGN_OUT: 'Sign Out'
+
+  PLAY_NOW: 'Play now'
+  PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
+  START_PLAYING: 'Start playing'
+
+  TEAM_WIN: 'Who wins?'
+  TEAM_BLUE: 'Team Blue'
+  TEAM_RED: 'Team Red'
+
+  BARONS_KILLED: 'Baron Nashor Killed'
+  NO_BARONS: 'Never'
+  BARONS_1: 'Once'
+  BARONS_2: 'Twice'
+  BARONS_3+: 'Three or more times'
+
+  LARGEST_MULTIKILL: 'Largest Multi Kill'
+  NO_MULTIKILL: 'No Multi Kill'
+  MULTIKILL_2: 'Double Kill'
+  MULTIKILL_3: 'Triple Kill'
+  MULTIKILL_4: 'Quadra Kill'
+  MULTIKILL_5+: 'Penta Kill and above'
+
+  DRAGONS_KILLED: 'Dragons Killed'
+  NO_DRAGONS: 'None'
+  DRAGONS_1: 'One'
+  DRAGONS_2: 'Two'
+  DRAGONS_3: 'Three'
+  DRAGONS_4: 'Four'
+  DRAGONS_5+: 'Five or more'
+
+  LARGEST_KILLING_SPREE: 'Largest Killing Spree'
+  NO_KILLING_SPREE: 'None'
+  KILLING_SPREE_3: 'Killing spree'
+  KILLING_SPREE_4: 'Rampage'
+  KILLING_SPREE_5: 'Unstoppable'
+  KILLING_SPREE_6: 'Dominating'
+  KILLING_SPREE_7: 'Godlike'
+  KILLING_SPREE_8+: 'Legendary'

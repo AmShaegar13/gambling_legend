@@ -5,7 +5,7 @@ class BaronsBet < BetType
     case barons
     when 0
       choice == 'NO_BARONS' ? bet.win! : bet.lose!
-    when 1,2
+    when 1, 2
       choice =~ /BARONS_#{barons}/ ? bet.win! : bet.lose!
     else
       choice == 'BARONS_3+' ? bet.win! : bet.lose!
