@@ -33,3 +33,7 @@ button .glyphicon, a.btn .glyphicon {
   src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'),
   url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
 }
+
+.jumbotron {
+  background: url("img/banner.jpg") repeat scroll center center / cover #eeeeee;
+}
