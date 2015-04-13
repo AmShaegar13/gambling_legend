@@ -4,6 +4,10 @@ $ ->
   if progress_bar.size() == 1
     seconds_left = progress_bar.data('seconds-left')
     timer = $.timer ->
+      if $('#time-left').size() == 0
+        timer.stop()
+        return
+
       seconds_left -= 1
 
       time = new Date(seconds_left * 1000)
@@ -18,7 +22,7 @@ $ ->
 
       if seconds_left == 0
         timer.stop()
-        location.reload()
+        Turbolinks.visit(location.toString())
 
     timer.set
       time: 1000,
@@ -78,11 +82,11 @@ $ ->
       choices.prop 'disabled', true
       button.removeClass 'btn-success'
       button.addClass 'btn-danger'
-      button.text 'Cancel'
+      button.text '<%=t :CANCEL %>'
     else
       form.prop 'method', 'post'
       method.prop 'value', 'post'
       choices.prop 'disabled', false
       button.removeClass 'btn-danger'
       button.addClass 'btn-success'
-      button.text 'Bet'
+      button.text '<%=t :BET %>'
