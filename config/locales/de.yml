@@ -1,0 +1,56 @@
+de:
+  SIGN_UP: 'Registrieren'
+  SIGN_IN: 'Anmelden'
+  SIGN_OUT: 'Abmelden'
+
+  NAME_OR_EMAIL: 'Name oder Email'
+  PASSWORD: 'Passwort'
+
+  PLAY_NOW: 'Jetzt spielen'
+  PLAY_NOW_DESCRIPTION: 'Gambling Legend ist kostenlos. Es wird keine Registration zum Testen benötigt. Jetzt losspielen und später registrieren!'
+  START_PLAYING: 'Loslegen'
+
+  STATISTICS: 'Statistiken'
+  STATISTICS_DESCRIPTION: 'Beschreibung'
+
+  BETS: 'Wetten'
+  BETS_DESCRIPTION: 'Beschreibung'
+
+  MORE: 'Mehr'
+
+  TEAM_WIN: 'Welches Team gewinnt?'
+  TEAM_BLUE: 'Team Blau'
+  TEAM_RED: 'Team Rot'
+
+  BARONS_KILLED: 'Anzahl getöteter Barons'
+  NO_BARONS: 'Keiner'
+  BARONS_1: 'Einer'
+  BARONS_2: 'Zwei'
+  BARONS_3+: 'Drei oder mehr'
+
+  LARGEST_MULTIKILL: 'Größte Mehrfachtötung'
+  NO_MULTIKILL: 'Keine Mehrfachtötung'
+  MULTIKILL_2: 'Doppeltötung'
+  MULTIKILL_3: 'Dreifachtötung'
+  MULTIKILL_4: 'Verfachtötung'
+  MULTIKILL_5+: 'Fünffachtötung oder mehr'
+
+  DRAGONS_KILLED: 'Anzahl getöteter Drachen'
+  NO_DRAGONS: 'Keiner'
+  DRAGONS_1: 'Einer'
+  DRAGONS_2: 'Zwei'
+  DRAGONS_3: 'Drei'
+  DRAGONS_4: 'Vier'
+  DRAGONS_5+: 'Fünf oder mehr'
+
+  LARGEST_KILLING_SPREE: 'Größter Blutrausch'
+  NO_KILLING_SPREE: 'Keiner'
+  KILLING_SPREE_3: 'Blutrausch'
+  KILLING_SPREE_4: 'Beserker'
+  KILLING_SPREE_5: 'Nicht aufhaltbar'
+  KILLING_SPREE_6: 'Dominierend'
+  KILLING_SPREE_7: 'Gottgleich'
+  KILLING_SPREE_8+: 'Legendär'
+
+  BET: 'Wetten'
+  CANCEL: 'Abbrechen'

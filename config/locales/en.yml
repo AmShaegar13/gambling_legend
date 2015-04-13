@@ -10,6 +10,14 @@ en:
   PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
   START_PLAYING: 'Start playing'
 
+  STATISTICS: 'Statistics'
+  STATISTICS_DESCRIPTION: 'Statistics description'
+
+  BETS: 'Bets'
+  BETS_DESCRIPTION: 'Bets description'
+
+  MORE: 'More'
+
   TEAM_WIN: 'Who wins?'
   TEAM_BLUE: 'Team Blue'
   TEAM_RED: 'Team Red'
@@ -43,3 +51,6 @@ en:
   KILLING_SPREE_6: 'Dominating'
   KILLING_SPREE_7: 'Godlike'
   KILLING_SPREE_8+: 'Legendary'
+
+  BET: 'Bet'
+  CANCEL: 'Cancel'
