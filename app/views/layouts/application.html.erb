@@ -23,12 +23,12 @@
         <% if User.current_user.guest? %>
           <%= form_tag sign_in_path, method: :post, class: 'navbar-form navbar-right' do %>
             <div class="form-group">
-              <%= label_tag :name_or_email, 'Name or Email', class: %w(control-label sr-only) %>
-              <%= text_field_tag :name_or_email, flash[:failed_login], class: 'form-control', placeholder: 'Name or Email' %>
+              <%= label_tag :name_or_email, t(:NAME_OR_EMAIL), class: %w(control-label sr-only) %>
+              <%= text_field_tag :name_or_email, flash[:failed_login], class: 'form-control', placeholder: t(:NAME_OR_EMAIL) %>
             </div>
             <div class="<%= password_class %>">
-              <%= label_tag :password, 'Password', class: 'control-label sr-only' %>
-              <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password', 'aria-describedby' => 'login_failed_error' %>
+              <%= label_tag :password, t(:PASSWORD), class: 'control-label sr-only' %>
+              <%= password_field_tag :password, nil, class: 'form-control', placeholder: t(:PASSWORD), 'aria-describedby' => 'login_failed_error' %>
               <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
               <span id="login_failed_error" class="sr-only">(error)</span>
             </div>

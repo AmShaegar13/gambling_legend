@@ -3,6 +3,9 @@ en:
   SIGN_IN: 'Sign In'
   SIGN_OUT: 'Sign Out'
 
+  NAME_OR_EMAIL: 'Name or Email'
+  PASSWORD: 'Password'
+
   PLAY_NOW: 'Play now'
   PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
   START_PLAYING: 'Start playing'
