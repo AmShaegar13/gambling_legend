@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   before_validation do
     self.balance ||= 1000
-    self.last_refill ||= Time.now
+    self.last_refill ||= Time.now.utc
     self.login ||= name.downcase
   end
 
