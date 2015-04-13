@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
         .try(:authenticate, password)
 
     if user
+      # protect from session fixation
+      reset_session
       session[:user_id] = user.id
     else
       flash[:failed_login] = name_or_email
