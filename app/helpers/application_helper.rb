@@ -8,7 +8,10 @@ module ApplicationHelper
 
   def refill_class
     res = 'btn btn-warning'
-    res << ' hidden' unless User.current_user.balance == 0
+
+    if User.current_user.balance != 0 || User.current_user.bets.current.size != 0
+      res << ' hidden'
+    end
 
     res
   end

@@ -2,6 +2,7 @@ en:
   SIGN_UP: 'Sign Up'
   SIGN_IN: 'Sign In'
   SIGN_OUT: 'Sign Out'
+  REFILL: 'Refill'
 
   NAME_OR_EMAIL: 'Name or Email'
   PASSWORD: 'Password'

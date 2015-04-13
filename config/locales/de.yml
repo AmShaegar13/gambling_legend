@@ -2,6 +2,7 @@ de:
   SIGN_UP: 'Registrieren'
   SIGN_IN: 'Anmelden'
   SIGN_OUT: 'Abmelden'
+  REFILL: 'Auffüllen'
 
   NAME_OR_EMAIL: 'Name oder Email'
   PASSWORD: 'Passwort'
