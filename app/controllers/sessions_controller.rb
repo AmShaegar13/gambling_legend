@@ -10,10 +10,10 @@ class SessionsController < ApplicationController
     else
       flash[:failed_login] = name_or_email
     end
-    
-    redirect_to :root
+
+    redirect_to :back
   end
-  
+
   def destroy
     reset_session
     redirect_to :root
