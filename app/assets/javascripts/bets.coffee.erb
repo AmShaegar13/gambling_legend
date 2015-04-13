@@ -82,11 +82,11 @@ $ ->
       choices.prop 'disabled', true
       button.removeClass 'btn-success'
       button.addClass 'btn-danger'
-      button.text '<%=t :CANCEL %>'
+      button.text '<%= I18n.t :CANCEL %>'
     else
       form.prop 'method', 'post'
       method.prop 'value', 'post'
       choices.prop 'disabled', false
       button.removeClass 'btn-danger'
       button.addClass 'btn-success'
-      button.text '<%=t :BET %>'
+      button.text '<%= I18n.t :BET %>'
