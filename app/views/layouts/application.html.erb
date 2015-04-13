@@ -47,7 +47,7 @@
             <% end %>
             &nbsp;
             <%= link_to refill_user_path, class: refill_class, role: 'button', remote: true, id: :refill do %>
-              <%=t :REFILL %>
+              <i class="glyphicon glyphicon-chevron-up"></i><%=t :REFILL %>
             <% end %>
             <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
               <i class="glyphicon glyphicon-off"></i><%=t :SIGN_OUT %>
