@@ -23,7 +23,12 @@ class BetsProcessor
   private
 
   def random_match
-    match_id = RiotGames::RandomMatch.new.pop
+    match_id = nil
+    loop do
+      match_id = RiotGames::RandomMatch.new.pop
+      break unless match_id.nil?
+    end
+
     file_append_line "<strong>Getting match information</strong> (#{match_id})..."
     riot_match = RiotGames::Match.find(match_id)
 

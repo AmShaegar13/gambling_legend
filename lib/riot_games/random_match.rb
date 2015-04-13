@@ -6,7 +6,9 @@ module RiotGames
 
     attr_reader :ids
 
-    def initialize(time = Time.now)
+    def initialize(time = nil)
+      # random time from 2nd to 12th April
+      time ||= Time.parse('2015-04-02') + rand(11.days)
       sec = time.to_i
 
       # round to a multiple of 5 minutes
@@ -17,7 +19,7 @@ module RiotGames
         res = request_ids(sec)
         break if res.code == '200'
 
-        # try previous 5-minute bucket
+        # try previous 5-minute bucket on undocumented 404
         if res.code == '404'
           sec -= 300
           next

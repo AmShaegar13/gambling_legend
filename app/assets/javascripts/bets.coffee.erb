@@ -29,8 +29,10 @@ $ ->
       autostart : true
 
     amounts = $('.bet-amount')
-    amounts.on 'change mousemove keypress', ->
+    amounts.on 'change mousemove keyup', (e) ->
       $(this).siblings('.preview-amount').text($(this).val())
+      if e.which == 13
+        $(this).next().children('button').click()
     amounts.find(':visible').trigger 'change'
 
     alert = $('#alert')
