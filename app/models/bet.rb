@@ -5,7 +5,7 @@ class Bet < ActiveRecord::Base
   belongs_to :match
 
   scope :current, -> { where(won: nil) }
-  scope :completed, -> { where.not(won: nil) }
+  scope :completed, -> (match) { where.not(won: nil, match: match) }
 
   validates_presence_of :user, :type, :choice, :amount
   validates_associated :user
@@ -36,7 +36,7 @@ class Bet < ActiveRecord::Base
     self.won = true
     save!
 
-    user.balance += choice.odds * amount
+    user.balance += choice.odds(match) * amount
     user.save!
   end
 
