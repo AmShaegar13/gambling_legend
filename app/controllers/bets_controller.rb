@@ -33,7 +33,8 @@ class BetsController < ApplicationController
       user: User.current_user,
       type: type,
       choice: choice,
-      amount: bet_params.require(:amount)
+      amount: bet_params.require(:amount),
+      odds: choice.odds
     )
 
     unless bet.persisted?

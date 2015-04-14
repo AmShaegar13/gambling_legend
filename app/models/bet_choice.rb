@@ -3,14 +3,12 @@ class BetChoice < ActiveRecord::Base
 
   default_scope { order:id }
 
-  def odds(match = nil)
-    return @odd unless @odds.nil?
-
+  def odds
     choices = type.choices.count
-    bets = Bet.completed(match).where(choice: self).count + 10
-    bets_sum = Bet.completed(match).where(type: type).count + 10 * choices
-    bets_sum = 1 if bets_sum == 0
+    matches = Match.where('? IN (winner_id, barons_id, multi_kill_id, dragons_id, killing_spree_id)', self.id).count
+    matches_sum = Match.count
+    matches_sum = 1 if matches_sum == 0
 
-    @odds = 1 + choices * (1 - bets.to_f/bets_sum)
+    1 + choices * (1 - matches.to_f/matches_sum)
   end
 end
