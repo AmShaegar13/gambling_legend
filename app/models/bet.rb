@@ -27,21 +27,17 @@ class Bet < ActiveRecord::Base
   end
 
   def process!(match)
-    type.process! self, match
+    if type.won? self.choice, match
+      self.won = true
+
+      user.balance += choice.odds(match) * amount
+      user.save!
+    else
+      self.won = false
+      save!
+    end
+
     self.match = match
-    save!
-  end
-
-  def win!
-    self.won = true
-    save!
-
-    user.balance += choice.odds(match) * amount
-    user.save!
-  end
-
-  def lose!
-    self.won = false
     save!
   end
 end

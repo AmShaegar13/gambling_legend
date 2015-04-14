@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20150413151510) do
   add_index "bets", ["user_id", "type_id", "match_id"], name: "index_bets_on_user_id_and_type_id_and_match_id", unique: true, using: :btree
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "winner"
-    t.integer  "dragons"
-    t.integer  "barons"
-    t.integer  "killing_spree"
-    t.integer  "multi_kill"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "winner_id"
+    t.integer  "dragons_id"
+    t.integer  "barons_id"
+    t.integer  "killing_spree_id"
+    t.integer  "multi_kill_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "sessions", force: :cascade do |t|

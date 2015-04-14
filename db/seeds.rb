@@ -9,8 +9,7 @@ end
 BaronsBet.create! label: 'BARONS_KILLED' do |type|
   BetChoice.create! type: type, label: 'NO_BARONS'
   BetChoice.create! type: type, label: 'BARONS_1'
-  BetChoice.create! type: type, label: 'BARONS_2'
-  BetChoice.create! type: type, label: 'BARONS_3+'
+  BetChoice.create! type: type, label: 'BARONS_2+'
 end
 
 MultiKillBet.create! label: 'LARGEST_MULTIKILL' do |type|
