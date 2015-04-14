@@ -34,8 +34,7 @@ en:
   BARONS_KILLED: 'Baron Nashor Killed'
   NO_BARONS: 'Never'
   BARONS_1: 'Once'
-  BARONS_2: 'Twice'
-  BARONS_3+: 'Three or more times'
+  BARONS_2+: 'Twice or more'
 
   LARGEST_MULTIKILL: 'Largest Multi Kill'
   NO_MULTIKILL: 'No Multi Kill'

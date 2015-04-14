@@ -34,8 +34,7 @@ de:
   BARONS_KILLED: 'Anzahl getöteter Barons'
   NO_BARONS: 'Keiner'
   BARONS_1: 'Einer'
-  BARONS_2: 'Zwei'
-  BARONS_3+: 'Drei oder mehr'
+  BARONS_2+: 'Zwei oder mehr'
 
   LARGEST_MULTIKILL: 'Größte Mehrfachtötung'
   NO_MULTIKILL: 'Keine Mehrfachtötung'
