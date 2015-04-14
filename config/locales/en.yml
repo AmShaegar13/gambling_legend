@@ -7,6 +7,11 @@ en:
   NAME_OR_EMAIL: 'Name or Email'
   PASSWORD: 'Password'
 
+  NAME: 'Name'
+  EMAIL: 'Email'
+  PASSWORD_CONFIRM: 'Passwort wiederholen'
+  SUBMIT: 'Absenden'
+
   PLAY_NOW: 'Play now'
   PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
   START_PLAYING: 'Start playing'
@@ -16,6 +21,9 @@ en:
 
   BETS: 'Bets'
   BETS_DESCRIPTION: 'Bets description'
+
+  HALL_OF_FAME: 'Hall of Fame'
+  HALL_OF_FAME_DESCRIPTION: 'Hall of Fame description'
 
   MORE: 'More'
 

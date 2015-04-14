@@ -7,6 +7,11 @@ de:
   NAME_OR_EMAIL: 'Name oder Email'
   PASSWORD: 'Passwort'
 
+  NAME: 'Name'
+  EMAIL: 'Email'
+  PASSWORD_CONFIRM: 'Passwort wiederholen'
+  SUBMIT: 'Absenden'
+
   PLAY_NOW: 'Jetzt spielen'
   PLAY_NOW_DESCRIPTION: 'Gambling Legend ist kostenlos. Es wird keine Registration zum Testen benötigt. Jetzt losspielen und später registrieren!'
   START_PLAYING: 'Loslegen'
@@ -16,6 +21,9 @@ de:
 
   BETS: 'Wetten'
   BETS_DESCRIPTION: 'Beschreibung'
+
+  HALL_OF_FAME: 'Ruhmeshalle'
+  HALL_OF_FAME_DESCRIPTION: 'Beschreibung'
 
   MORE: 'Mehr'
 
