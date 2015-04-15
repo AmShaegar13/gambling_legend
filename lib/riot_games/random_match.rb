@@ -33,7 +33,7 @@ module RiotGames
       @ids = JSON.parse(res.body)
     end
 
-    delegate :pop, to: :ids
+    delegate :sample, to: :ids
 
     private
 

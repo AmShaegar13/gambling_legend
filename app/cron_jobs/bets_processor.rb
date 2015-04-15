@@ -8,7 +8,11 @@ class BetsProcessor
     file_append_line
 
     Bet.transaction do
-      match = random_match
+      match = nil
+      loop do
+        match = random_match
+        break if match.persisted?
+      end
       bets = Bet.current
       file_append '<strong>Calculating winnings</strong>'
       bets.each do |bet|
@@ -25,14 +29,14 @@ class BetsProcessor
   def random_match
     match_id = nil
     loop do
-      match_id = RiotGames::RandomMatch.new.pop
+      match_id = RiotGames::RandomMatch.new.sample
       break unless match_id.nil?
     end
 
     file_append_line "<strong>Getting match information</strong> (#{match_id})..."
     riot_match = RiotGames::Match.find(match_id)
 
-    Match.create!(
+    Match.create(
       id: riot_match.matchId,
       winner: riot_match.winner,
       dragons: riot_match.dragons,
