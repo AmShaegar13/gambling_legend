@@ -6,7 +6,7 @@ class BetChoice < ActiveRecord::Base
   def odds
     matches = Match.where('? IN (winner_id, barons_id, multi_kill_id, dragons_id, killing_spree_id)', self.id).count
     matches_sum = Match.count
-    matches_sum = 1 if matches_sum == 0
+    matches = 1 if matches == 0
 
     matches_sum.to_f/matches
   end
