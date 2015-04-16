@@ -9,8 +9,8 @@ en:
 
   NAME: 'Name'
   EMAIL: 'Email'
-  PASSWORD_CONFIRM: 'Passwort wiederholen'
-  SUBMIT: 'Absenden'
+  PASSWORD_CONFIRM: 'Confirm password'
+  SUBMIT: 'Submit'
 
   PLAY_NOW: 'Play now'
   PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
