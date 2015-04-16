@@ -13,7 +13,7 @@ fr:
   SUBMIT: 'Soumettre'
 
   PLAY_NOW: 'Jouer maintenant'
-  PLAY_NOW_DESCRIPTION: 'Gambling Legend est totalement gratuit! Essayez le maintenant, pas d'inscription requise. Commencez à jouer, et inscrivez vous ultérieurement.'
+  PLAY_NOW_DESCRIPTION: "Gambling Legend est totalement gratuit! Essayez le maintenant, pas d'inscription requise. Commencez à jouer, et inscrivez vous ultérieurement."
   START_PLAYING: 'Commencez à jouer'
 
   STATISTICS: 'Statistiques'
@@ -36,7 +36,7 @@ fr:
   BARONS_1: 'Une fois'
   BARONS_2+: 'Deux fois ou plus'
 
-  LARGEST_MULTIKILL: 'Plus grand nombre de meurtres simultanés'
+  LARGEST_MULTIKILL: 'Tués simultanés max'
   NO_MULTIKILL: 'Aucun'
   MULTIKILL_2: 'Doublés'
   MULTIKILL_3: 'Triplés'

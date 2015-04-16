@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     else
       User.guest session
     end
+
+    I18n.locale = session[:lang] || :en
   end
 
   def index

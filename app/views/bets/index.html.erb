@@ -15,7 +15,7 @@
   <div class="row" style="height: 280px">
     <% @bet_types.each do |type| %>
       <div class="col-md-4 col-sm-6 col-xs-12 bet">
-        <h2><%=t type.label %></h2>
+        <h3><%=t type.label %></h3>
         <% bet = @bets[type.label] %>
         <% cancel = bet.amount != 0 %>
         <%= form_for bet, remote: true, namespace: type.label, method: cancel ? 'delete' : 'post', html: { autocomplete: 'off' } do |f| %>

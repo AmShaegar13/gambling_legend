@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     get :history
   end
   get :play, to: 'bets#index'
+
+  get 'lang/:lang', to: 'sessions#lang'
 end
