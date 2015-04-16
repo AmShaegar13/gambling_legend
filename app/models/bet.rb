@@ -13,10 +13,12 @@ class Bet < ActiveRecord::Base
 
   validate do
     errors.add :amount, 'must be positive' if amount <= 0
-    errors.add :choice, 'must be of correct type' unless type.choices.include? choice
+    errors.add :choice, 'must be of correct type' if choice.present? && !type.choices.include?(choice)
   end
 
   before_create do
+    self.odds = choice.odds
+
     user.balance -= amount
     user.save!
   end
