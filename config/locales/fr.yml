@@ -1,0 +1,64 @@
+fr:
+  SIGN_UP: 'Inscription'
+  SIGN_IN: 'Connection'
+  SIGN_OUT: 'Déconnexion'
+  REFILL: 'Refill'
+
+  NAME_OR_EMAIL: 'Nom ou E-mail'
+  PASSWORD: 'Mot de passe'
+
+  NAME: 'Nom'
+  EMAIL: 'E-mail'
+  PASSWORD_CONFIRM: 'Confirmer le mot de passe'
+  SUBMIT: 'Soumettre'
+
+  PLAY_NOW: 'Jouer maintenant'
+  PLAY_NOW_DESCRIPTION: 'Gambling Legend est totalement gratuit! Essayez le maintenant, pas d'inscription requise. Commencez à jouer, et inscrivez vous ultérieurement.'
+  START_PLAYING: 'Commencez à jouer'
+
+  STATISTICS: 'Statistiques'
+  STATISTICS_DESCRIPTION: 'Description des statistiques'
+
+  BETS: 'Paris'
+  BETS_DESCRIPTION: 'Description des paris'
+
+  HALL_OF_FAME: 'Panthéon'
+  HALL_OF_FAME_DESCRIPTION: 'Description du panthéon'
+
+  MORE: 'Plus'
+
+  TEAM_WIN: 'Qui gagne ?'
+  TEAM_BLUE: 'Équipe bleue'
+  TEAM_RED: 'Équipe rouge'
+
+  BARONS_KILLED: 'Barons Nashor tués'
+  NO_BARONS: 'Aucun'
+  BARONS_1: 'Une fois'
+  BARONS_2+: 'Deux fois ou plus'
+
+  LARGEST_MULTIKILL: 'Plus grand nombre de meurtres simultanés'
+  NO_MULTIKILL: 'Aucun'
+  MULTIKILL_2: 'Doublés'
+  MULTIKILL_3: 'Triplés'
+  MULTIKILL_4: 'Quadruplés'
+  MULTIKILL_5+: 'Quintuplés, ou plus'
+
+  DRAGONS_KILLED: 'Dragons tués'
+  NO_DRAGONS: 'Aucun'
+  DRAGONS_1: 'Un'
+  DRAGONS_2: 'Deux'
+  DRAGONS_3: 'Trois'
+  DRAGONS_4: 'Quatres'
+  DRAGONS_5+: 'Cinq ou plus'
+
+  LARGEST_KILLING_SPREE: 'Plus longue série meurtrière'
+  NO_KILLING_SPREE: 'Aucune'
+  KILLING_SPREE_3: 'Meurtre en série'
+  KILLING_SPREE_4: 'Carnage'
+  KILLING_SPREE_5: 'Invincible'
+  KILLING_SPREE_6: 'Domination'
+  KILLING_SPREE_7: 'Divin'
+  KILLING_SPREE_8+: 'Légendaire'
+
+  BET: 'Parier'
+  CANCEL: 'Annuler'
