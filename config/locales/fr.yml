@@ -31,8 +31,8 @@ fr:
   TEAM_BLUE: 'Équipe bleue'
   TEAM_RED: 'Équipe rouge'
 
-  BARONS_KILLED: 'Barons Nashor tués'
-  NO_BARONS: 'Aucun'
+  BARONS_KILLED: 'Baron Nashor tués'
+  NO_BARONS: 'Jamais'
   BARONS_1: 'Une fois'
   BARONS_2+: 'Deux fois ou plus'
 

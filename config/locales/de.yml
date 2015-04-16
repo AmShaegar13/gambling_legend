@@ -31,10 +31,10 @@ de:
   TEAM_BLUE: 'Team Blau'
   TEAM_RED: 'Team Rot'
 
-  BARONS_KILLED: 'Anzahl getöteter Barons'
-  NO_BARONS: 'Keiner'
-  BARONS_1: 'Einer'
-  BARONS_2+: 'Zwei oder mehr'
+  BARONS_KILLED: 'Baron getötet'
+  NO_BARONS: 'Gar nicht'
+  BARONS_1: 'Einmal'
+  BARONS_2+: 'Zweimal oder öfter'
 
   LARGEST_MULTIKILL: 'Größte Mehrfachtötung'
   NO_MULTIKILL: 'Keine Mehrfachtötung'
@@ -43,7 +43,7 @@ de:
   MULTIKILL_4: 'Verfachtötung'
   MULTIKILL_5+: 'Fünffachtötung oder mehr'
 
-  DRAGONS_KILLED: 'Anzahl getöteter Drachen'
+  DRAGONS_KILLED: 'Getötete Drachen'
   NO_DRAGONS: 'Keiner'
   DRAGONS_1: 'Einer'
   DRAGONS_2: 'Zwei'
