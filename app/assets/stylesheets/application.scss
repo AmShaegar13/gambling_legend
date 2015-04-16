@@ -37,3 +37,11 @@ button .glyphicon, a.btn .glyphicon {
 .jumbotron {
   background: url("img/banner.jpg") repeat scroll center center / cover #eeeeee;
 }
+
+#notify {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+}

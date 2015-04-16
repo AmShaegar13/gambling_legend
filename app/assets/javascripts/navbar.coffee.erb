@@ -1,3 +1,16 @@
+notify = (type, html) ->
+  alert = $('<div>')
+    .addClass('alert alert-' + type)
+    .addClass('col-md-offset-3 col-md-6')
+    .prop('role', 'alert')
+    .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>')
+    .append(html)
+  $('#notify').append alert
+
+  timer = $.timer ->
+    alert.slideUp()
+  timer.once 7000
+
 $ ->
   refill = $('#refill')
   alert = $('#alert')
@@ -13,14 +26,6 @@ $ ->
       else
         ranges.prop 'step', 10
     else
-      create_alert 'warning', data.message
+      notify 'warning', data.message
   ).on 'ajax:error', (e, xhr, status, error) ->
-    create_alert 'danger', '<strong>An unexpected error occurred.</strong> ' + error
-
-  create_alert = (type, html) ->
-    alert.html(
-      $('<div>')
-        .addClass('alert alert-' + type)
-        .prop('role', 'alert')
-        .html(html)
-    )
+    notify 'danger', '<strong>An unexpected error occurred.</strong> ' + error
