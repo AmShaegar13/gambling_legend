@@ -2,7 +2,6 @@
   <div  class="col-sm-4 col-sm-offset-4 col-xs-12">
     <h2><%=t :SIGN_UP %></h2>
     <hr>
-    <div id="alert"></div>
     <%= form_for @user, url: user_path, remote: true do |f| %>
       <div class="form-group">
         <label for="user_name"><%=t :NAME %></label>

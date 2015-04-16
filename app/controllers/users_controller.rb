@@ -19,14 +19,14 @@ class UsersController < ApplicationController
     user = User.current_user
 
     if user.balance != 0 || user.bets.current.size != 0
-      render json: { status: 'error', message: 'Not eligible for refill. You need to be bankrupt.' }
+      render json: { status: 'error', message: '<strong>Not eligible for refill.</strong> You need to be bankrupt.' }
       return
     end
 
     next_refill = user.last_refill + 1.hour
 
     if next_refill > Time.now.utc
-      render json: { status: 'error', message: 'Not eligible for refill. You can only refill once per hour. Next refilll available at '+next_refill.to_s }
+      render json: { status: 'error', message: '<strong>Not eligible for refill.</strong> You can only refill once per hour. Next refilll available at '+next_refill.to_s }
       return
     end
 

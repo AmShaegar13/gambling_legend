@@ -35,32 +35,18 @@ $ ->
         $(this).next().children('button').click()
     amounts.find(':visible').trigger 'change'
 
-    alert = $('#alert')
     $('.new_bet').on('ajax:success', (e, data, status, xhr) ->
       if data.status == 'success'
         handle_bet data
       else
-        create_alert 'warning', data.message
+        notify 'warning', data.message
     ).on 'ajax:error', (e, xhr, status, error) ->
-      create_alert 'danger', '<strong>An unexpected error occurred.</strong> ' + error
+      notify 'danger', '<strong>An unexpected error occurred.</strong> ' + error
 
   if $('#locked').size() == 1
-    alert_timer = $.timer ->
+    refresh_timer = $.timer ->
       Turbolinks.visit(location.toString());
-    alert_timer.once 5000
-
-  create_alert = (type, html) ->
-    alert.append(
-      $('<div>')
-        .addClass('alert alert-' + type + ' alert-dismissable')
-        .prop('role', 'alert')
-        .append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>')
-        .append(html)
-    )
-
-    alert_timer = $.timer ->
-      alert.find(':first-child').remove()
-    alert_timer.once 3000
+    refresh_timer.once 5000
 
   handle_bet = (data) ->
     form = $('#' + data.type + '_new_bet')

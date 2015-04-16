@@ -1,4 +1,4 @@
-notify = (type, html) ->
+window.notify = (type, html) ->
   alert = $('<div>')
     .addClass('alert alert-' + type)
     .addClass('col-md-offset-3 col-md-6')
@@ -13,8 +13,6 @@ notify = (type, html) ->
 
 $ ->
   refill = $('#refill')
-  alert = $('#alert')
-
   refill.on('ajax:success', (e, data, status, xhr) ->
     if data.status == 'success'
       refill.addClass 'hidden'
