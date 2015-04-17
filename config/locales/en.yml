@@ -13,17 +13,23 @@ en:
   SUBMIT: 'Submit'
 
   PLAY_NOW: 'Play now'
-  PLAY_NOW_DESCRIPTION: 'Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.'
+  PLAY_NOW_DESCRIPTION: >
+    Gambling Legend is completely free. Try it now! No signup required. Just start playing and sign up later.
   START_PLAYING: 'Start playing'
 
-  STATISTICS: 'Statistics'
-  STATISTICS_DESCRIPTION: 'Statistics description'
-
-  BETS: 'Bets'
-  BETS_DESCRIPTION: 'Bets description'
+  WELCOME_TEXT: >
+    Welcome! This project was created as a submission for the Riot Games %{challenge}. Here you can bet on random matches of the
+    popular URF mode. You get a small starting capital, which will hopefully multiply soon. Many features are
+    already available, some are still in planning or development.
 
   HALL_OF_FAME: 'Hall of Fame'
-  HALL_OF_FAME_DESCRIPTION: 'Hall of Fame description'
+  HALL_OF_FAME_DESCRIPTION: 'Compare your skills and balance with those of other players.'
+
+  STATISTICS: 'Statistics'
+  STATISTICS_DESCRIPTION: 'Find statics about all bets here.'
+
+  FAQ: 'FAQ'
+  FAQ_DESCRIPTION: 'A collection of common questions about this project.'
 
   MORE: 'More'
 

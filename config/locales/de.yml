@@ -13,17 +13,24 @@ de:
   SUBMIT: 'Absenden'
 
   PLAY_NOW: 'Jetzt spielen'
-  PLAY_NOW_DESCRIPTION: 'Gambling Legend ist kostenlos. Es wird keine Registration zum Testen benötigt. Jetzt losspielen und später registrieren!'
+  PLAY_NOW_DESCRIPTION: >
+    Gambling Legend ist kostenlos. Es wird keine Registration zum Testen benötigt. Jetzt losspielen und später
+    registrieren!
   START_PLAYING: 'Loslegen'
 
-  STATISTICS: 'Statistiken'
-  STATISTICS_DESCRIPTION: 'Beschreibung'
-
-  BETS: 'Wetten'
-  BETS_DESCRIPTION: 'Beschreibung'
+  WELCOME_TEXT: >
+    Willkommen! Dieses Projekt ist als Beitrag zu Riot Games %{challenge} entstanden. Hier kannst du auf zufällige Spiele des
+    beliebten URF-Modus wetten. Du bekommst ein kleines Startkapital, welches sich hoffentlich bald verfielfachen wird.
+    Viele Funktionen sind schon vorhanden, einige befinden sich jedoch noch in der Planung oder Entwicklung.
 
   HALL_OF_FAME: 'Ruhmeshalle'
-  HALL_OF_FAME_DESCRIPTION: 'Beschreibung'
+  HALL_OF_FAME_DESCRIPTION: 'Vergleiche deine Fähigkeiten und deinen Kontostand mit denen anderer Spieler.'
+
+  STATISTICS: 'Statistiken'
+  STATISTICS_DESCRIPTION: 'Demnächst verfügbar'
+
+  FAQ: 'FAQ'
+  FAQ_DESCRIPTION: 'Eine Sammlung von häufige Fragen über dieses Projekt.'
 
   MORE: 'Mehr'
 
