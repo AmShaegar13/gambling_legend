@@ -19,5 +19,5 @@ Thread.new do
 end
 
 at_exit do
-  File.delete BetsProcessor::LOCK_FILE
+  File.delete BetsProcessor::LOCK_FILE rescue nil
 end
