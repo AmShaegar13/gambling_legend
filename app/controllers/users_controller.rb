@@ -36,4 +36,12 @@ class UsersController < ApplicationController
 
     render json: { status: 'success', balance: user.balance }
   end
+
+  def lang
+    user = User.current_user
+    user.lang = params.require :lang
+    user.save!
+
+    redirect_to :back
+  end
 end

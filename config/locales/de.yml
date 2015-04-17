@@ -62,3 +62,5 @@ de:
 
   BET: 'Wetten'
   CANCEL: 'Abbrechen'
+
+  INVALID_LANG: '%{value} ist keine gültige Sprache'

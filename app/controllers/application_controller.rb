@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       User.guest session
     end
 
-    I18n.locale = session[:lang] || :en
+    I18n.locale = User.current_user.lang || :en
   end
 
   def index

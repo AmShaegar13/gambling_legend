@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   has_many :bets
 
   has_secure_password
-  validates_presence_of :login, :name, :email, :last_refill
+  validates_presence_of :login, :name, :email, :last_refill, :lang
   validates_uniqueness_of :login, :name, :email
+  validates :lang, inclusion: { in: %w(de en fr), message: I18n.t(:INVALID_LANG) }
 
   validate do
     errors.add :balance, 'cannot be negative' if balance < 0

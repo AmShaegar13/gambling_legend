@@ -20,9 +20,4 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to :root
   end
-
-  def lang
-    session[:lang] = params.require :lang
-    redirect_to :back
-  end
 end

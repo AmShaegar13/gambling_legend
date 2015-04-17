@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   end
   get :play, to: 'bets#index'
 
-  get 'lang/:lang', to: 'sessions#lang'
+  get 'lang/:lang', to: 'users#lang'
 end
