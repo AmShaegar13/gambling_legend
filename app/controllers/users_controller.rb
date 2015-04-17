@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   def create
     user_params = params.require :user
+
+    if user_params[:name] =~ /guest/i
+      render json: { status: 'error', message: 'Name already taken.' }
+      return
+    end
+
     user = User.create(user_params.permit :name, :email, :password, :password_confirmation)
 
     unless user.persisted?
