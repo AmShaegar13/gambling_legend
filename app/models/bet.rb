@@ -5,11 +5,13 @@ class Bet < ActiveRecord::Base
   belongs_to :match
 
   scope :current, -> { where(won: nil) }
-  scope :completed, -> { where.not(won: nil, match: match) }
+  scope :completed, -> { where.not(won: nil) }
 
   validates_presence_of :user, :type, :choice, :amount
   validates_associated :user
   validates_uniqueness_of :type, scope: [:user, :match]
+
+  alias_attribute :won?, :won
 
   validate do
     errors.add :amount, 'must be positive' if amount <= 0

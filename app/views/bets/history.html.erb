@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <h2><%=t :RECENT_BETS %></h2>
+    <table class="table table-condensed">
+      <tr>
+        <th><%=t :DATE %></th>
+        <th><%=t :TYPE %></th>
+        <th><%=t :CHOICE %></th>
+        <th><%=t :ODDS %></th>
+        <th><%=t :WIN %></th>
+        <th><%=t :MATCH %></th>
+      </tr>
+      <% @bets.each_with_index do |bet, i| %>
+        <tr class="<%= bet.won? ? 'success' : 'danger' %>">
+          <td><%=l bet.updated_at, format: :short %></td>
+          <td><%=t bet.type.label %></td>
+          <td><%=t bet.choice.label %></td>
+          <td><%= '%.2f' % [bet.odds] %></td>
+          <td><%= win(bet) %></td>
+          <td><a href="http://matchhistory.euw.leagueoflegends.com/<%= @user.lang %>/#match-details/EUW1/<%= bet.match_id %>/0"><%=t :MATCH %></a></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

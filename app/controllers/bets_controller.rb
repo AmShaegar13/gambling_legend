@@ -37,7 +37,7 @@ class BetsController < ApplicationController
     )
 
     unless bet.persisted?
-      render json: { status: 'error', message: '<strong>Unexpected error.</strong> ' + (bet.errors.full_messages + bet.user.errors.full_messages).join(', ') }
+      render json: { status: 'error', message: '<strong>Error.</strong> ' + (bet.errors.full_messages + bet.user.errors.full_messages).join(', ') }
       return
     end
 
@@ -63,5 +63,10 @@ class BetsController < ApplicationController
     User.current_user.reload
 
     render json: { status: 'success', action: 'enable', type: type.label, balance: User.current_user.balance, amount: bet.amount }
+  end
+
+  def history
+    @user = User.current_user
+    @bets = @user.bets.completed.includes(:type, :choice)
   end
 end
