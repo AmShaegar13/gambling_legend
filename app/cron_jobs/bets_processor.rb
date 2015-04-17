@@ -20,7 +20,7 @@ class BetsProcessor
         bet.process! match
       end
     end
-
+  ensure
     File.delete LOCK_FILE
   end
 
