@@ -1,6 +1,7 @@
 $ ->
-  progress_bar = $('#time-left')
+  $('[data-toggle="tooltip"]').tooltip()
 
+  progress_bar = $('#time-left')
   if progress_bar.size() == 1
     seconds_left = progress_bar.data('seconds-left')
     timer = $.timer ->
@@ -46,7 +47,7 @@ $ ->
   if $('#locked').size() == 1
     refresh_timer = $.timer ->
       Turbolinks.visit(location.toString());
-    refresh_timer.once 5000
+    refresh_timer.once 10000
 
   handle_bet = (data) ->
     form = $('#' + data.type + '_new_bet')

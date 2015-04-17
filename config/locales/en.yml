@@ -62,5 +62,4 @@ en:
 
   BET: 'Bet'
   CANCEL: 'Cancel'
-
-  INVALID_LANG: '%{value} is not a valid language'
+  ODDS: 'Odds'
