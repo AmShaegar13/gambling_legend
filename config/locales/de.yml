@@ -65,3 +65,9 @@ de:
   BET: 'Wetten'
   CANCEL: 'Abbrechen'
   ODDS: 'Quote'
+
+  DATE: 'Datum'
+  TYPE: 'Typ'
+  CHOICE: 'Auswahl'
+  PROFIT: 'Gewinn'
+  MATCH: 'Spiel'

@@ -65,3 +65,9 @@ fr:
   BET: 'Parier'
   CANCEL: 'Annuler'
   ODDS: 'Cote'
+
+  DATE: 'Date'
+  TYPE: 'Type'
+  CHOICE: 'Choice'
+  PROFIT: 'Win'
+  MATCH: 'Match'

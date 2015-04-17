@@ -65,3 +65,9 @@ en:
   BET: 'Bet'
   CANCEL: 'Cancel'
   ODDS: 'Odds'
+
+  DATE: 'Date'
+  TYPE: 'Type'
+  CHOICE: 'Choice'
+  PROFIT: 'Profit'
+  MATCH: 'Match'
