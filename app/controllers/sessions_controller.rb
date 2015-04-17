@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       flash[:failed_login] = name_or_email
     end
 
-    redirect_to :back
+    redirect_to :play
   end
 
   def destroy
