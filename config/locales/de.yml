@@ -42,7 +42,7 @@ de:
   NO_MULTIKILL: 'Keine Mehrfachtötung'
   MULTIKILL_2: 'Doppeltötung'
   MULTIKILL_3: 'Dreifachtötung'
-  MULTIKILL_4: 'Verfachtötung'
+  MULTIKILL_4: 'Vierfachtötung'
   MULTIKILL_5+: 'Fünffachtötung oder mehr'
 
   DRAGONS_KILLED: 'Getötete Drachen'
