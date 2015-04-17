@@ -55,7 +55,7 @@ de:
   NO_KILLING_SPREE: 'Keiner'
   KILLING_SPREE_3: 'Blutrausch'
   KILLING_SPREE_4: 'Beserker'
-  KILLING_SPREE_5: 'Nicht aufhaltbar'
+  KILLING_SPREE_5: 'Unaufhaltbar'
   KILLING_SPREE_6: 'Dominierend'
   KILLING_SPREE_7: 'Gottgleich'
   KILLING_SPREE_8+: 'Legendär'
