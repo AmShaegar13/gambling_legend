@@ -62,5 +62,3 @@ fr:
 
   BET: 'Parier'
   CANCEL: 'Annuler'
-
-  INVALID_LANG: '%{value} ne est pas un langage valide'
