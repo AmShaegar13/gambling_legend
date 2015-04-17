@@ -1,4 +1,4 @@
-class AddLangToUser < ActiveRecord::Migration
+class AddLangToUsers < ActiveRecord::Migration
   def change
     change_table :users do |t|
       t.string :lang, null: false, default: 'en'

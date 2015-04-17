@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
     User.current_user = if session[:user_id]
       User.find session[:user_id]
     else
-      User.guest session
+      g = Guest.create
+      session[:user_id] = g.id
+
+      g
     end
 
     I18n.locale = User.current_user.lang || :en
-  end
-
-  def index
   end
 end
