@@ -78,3 +78,5 @@ en:
   PROFIT: 'Profit'
   MATCH: 'Match'
   LINK: 'Link'
+
+  ISSUES_TEXT: 'If you find any bugs or have an idea, please report them %{prelink}here%{postlink}.'

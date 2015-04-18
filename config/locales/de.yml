@@ -78,3 +78,6 @@ de:
   CHOICE: 'Auswahl'
   PROFIT: 'Gewinn'
   MATCH: 'Spiel'
+  LINK: 'Link'
+
+  ISSUES_TEXT: 'Falls du irgendwelche Bugs findest oder eine Idee hast, melde sie bitte %{prelink}hier%{postlink}.'
