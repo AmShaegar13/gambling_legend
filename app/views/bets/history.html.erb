@@ -17,7 +17,7 @@
           <td><%=t bet.choice.label %></td>
           <td><%= '%.2f' % [bet.odds] %></td>
           <td><%= win(bet) %></td>
-          <td><a href="http://matchhistory.euw.leagueoflegends.com/<%= @user.lang %>/#match-details/EUW1/<%= bet.match_id %>/0"><%=t :MATCH %></a></td>
+          <td><a href="http://matchhistory.euw.leagueoflegends.com/<%= @user.lang %>/#match-details/EUW1/<%= bet.match_id %>/0"><%=t :LINK %></a></td>
         </tr>
       <% end %>
     </table>
