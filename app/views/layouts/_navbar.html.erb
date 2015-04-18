@@ -13,9 +13,15 @@
         <a href="/lang/en"><img src="/assets/img/en.png"></a>
       </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
+    <div id="navbar" class="navbar-collapse collapse navbar-form navbar-right">
+      <%= link_to history_bets_path, class: 'btn btn-link', role: 'button' do %>
+        <i class="glyphicon glyphicon-piggy-bank"></i><span id="balance"><%= User.current_user.balance %></span>
+      <% end %>
+      <%= link_to refill_user_path, class: refill_class, role: 'button', remote: true, id: :refill do %>
+        <i class="glyphicon glyphicon-chevron-up"></i><%=t :REFILL %>
+      <% end %>
       <% if User.current_user.guest? %>
-        <%= form_tag sign_in_path, method: :post, class: 'navbar-form navbar-right', style: 'padding-left: 0' do %>
+        <%= form_tag sign_in_path, method: :post, class: 'navbar-right', style: 'padding-left: 0' do %>
           <div class="form-group">
             <%= label_tag :name_or_email, t(:NAME_OR_EMAIL), class: %w(control-label sr-only) %>
             <%= text_field_tag :name_or_email, flash[:failed_login], class: 'form-control', placeholder: t(:NAME_OR_EMAIL) %>
@@ -32,23 +38,13 @@
           <% end %>
         <% end %>
       <% else %>
-        <div class="navbar-form navbar-right">
-          <%= link_to user_path, class: 'btn btn-link', role: 'button' do %>
-            <i class="glyphicon glyphicon-user"></i><%= User.current_user.name %>
-          <% end %>
-          <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
-            <i class="glyphicon glyphicon-off"></i><%=t :SIGN_OUT %>
-          <% end %>
-        </div>
+        <button class="btn btn-link" role="button">
+          <i class="glyphicon glyphicon-user"></i><%= User.current_user.name %>
+        </button>
+        <%= link_to sign_out_path, class: 'btn btn-danger', role: 'button' do %>
+          <i class="glyphicon glyphicon-off"></i><%=t :SIGN_OUT %>
+        <% end %>
       <% end %>
-      <div class="navbar-form navbar-right">
-        <%= link_to history_bets_path, class: 'btn btn-link', role: 'button' do %>
-          <i class="glyphicon glyphicon-piggy-bank"></i><span id="balance"><%= User.current_user.balance %></span>
-        <% end %>
-        <%= link_to refill_user_path, class: refill_class, role: 'button', remote: true, id: :refill do %>
-          <i class="glyphicon glyphicon-chevron-up"></i><%=t :REFILL %>
-        <% end %>
-      </div>
     </div>
   </div>
 </nav>
