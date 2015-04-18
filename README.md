@@ -50,6 +50,22 @@ The Rails environment includes a worker that runs in its own thread and evaluate
 Alternatively, you can start a daemon with `ruby daemon/bets.rb start` or trigger the evaluation once manually by
 running `rake cron:bets`.
 
+## Features
+
+* Bet on random URF matches
+* Refill account once per hour if you lost everything
+* View your latest bets
+* Sign Up to save your progress
+* Realistic odds based on actual match stats
+* Localization in Englisch and German
+
+### Technical Features
+
+* Securely hashed and salted passwords
+* CSRF Protection
+* Turbolinks to speed up navigating
+* Clean and easy to use Bootstrap layout
+
 ## Missing features
 
 Some basic features didn't make it in time into the project but will be added after the challenge. Those are for example:
@@ -70,3 +86,4 @@ Because betting on random matches is quite ... random we have plans to extend th
 * Bet on arbitrary matches
   * Search for friends' or streamers' matches
 * Live odds, depending on current bets
+* API?
