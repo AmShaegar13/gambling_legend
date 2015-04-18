@@ -1,10 +1,10 @@
 # Gambling Legend
 
-Gambling Legend is a platform to bet on random URF games created for the Riot Games API challenge. Every 10 minutes a
-random URF game will be chosen and all active bets are evaluated. The odds for the different choices are calculated by
+Gambling Legend is a platform to bet on random URF matches created for the Riot Games API challenge. Every 10 minutes a
+random URF match is chosen and all active bets are evaluated. The odds for the different choices are calculated by
 their rate of appearance. Thus you need a basic set of matches to have interesting odds.
 
-You can try all the features without signing up as guest. It will work the same as an original user except for the
+You can try all the features as a guest without signing up. It will work the same as an original user except for the
 session being deleted when you close the browser. To save your winnings you need to sign up.
 
 ## Demo
@@ -41,7 +41,8 @@ Open `config/database.yml` and setup your postgresql connection.
     rails s -p 3000
 
 You are now running the full application in development mode. To start in production you will need to set
-`RAILS_ENV=production` and precompile assets first.
+`RAILS_ENV=production` and [precompile assets](http://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets)
+first.
 
 ## Operation
 
@@ -51,7 +52,7 @@ running `rake cron:bets`.
 
 ## Missing features
 
-Some basic features didn't make it in time into the project but will be added after challenge. Those are for example:
+Some basic features didn't make it in time into the project but will be added after the challenge. Those are for example:
 
 * Account setting
 * Email verification
@@ -65,7 +66,7 @@ Some basic features didn't make it in time into the project but will be added af
 
 Because betting on random matches is quite ... random we have plans to extend the features after the API challenge ends.
 
-* Bet on featured ranked games
-* Bet on arbitrary games
-  * Search for a friend's or streamer's game
-* Live oddds, changing depending on bets
+* Bet on featured ranked matches
+* Bet on arbitrary matches
+  * Search for friends' or streamers' matches
+* Live odds, depending on current bets
