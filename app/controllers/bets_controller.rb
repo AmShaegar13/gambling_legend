@@ -67,6 +67,6 @@ class BetsController < ApplicationController
 
   def history
     @user = User.current_user
-    @bets = @user.bets.completed.includes(:type, :choice)
+    @bets = @user.bets.completed.order(id: :desc).includes(:type, :choice)
   end
 end
