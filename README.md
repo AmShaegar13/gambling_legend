@@ -77,6 +77,7 @@ Some basic features didn't make it in time into the project but will be added af
 * FAQ
 * Automatic time zone detection
 * Automatic language detection
+* Automatic tests
 
 ## Planned features
 
